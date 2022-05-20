@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}User Signup{% endblock title %}
+  
+{% block header %}
+{% include "header.html" %}  
+{% endblock header %}
+
+
+
+{% block content %}
+<!-- content  -->
+<div class="reg">
+  <h1 class="titles">signin</h1>
+  <div class="form">
+    <div class="form-page">
+      <form action="{% url 'signin' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="labe" for="exampleInputText1">username</label>
+          <input type="username" name="username" class="form-control" id="exampleInputText1" aria-describedby="textHelp">
+        </div>
+        <div class="form-group">
+          <label class="labe"  for="exampleInputText1">password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputText1" aria-describedby="textHelp">
+        </div>
+        <button type="submit" class="btn check-btn">signin</button>
+        <h4 style="font-size: 15px;">signup if you dont have an account with us <a href="{% url 'signup' %}">signup</a></h4>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- content done -->
+
+{% endblock content %}
+{% block footer %}
+{% include "footer.html" %}  
+{% endblock footer %}
